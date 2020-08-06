@@ -1,0 +1,37 @@
+@import "./core/reset";
+@import "./core/variables";
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "head quote quote"
+    "head input input"
+    "cards cards cards";
+
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: 70px 70px 1fr;
+
+  .div1 {
+    grid-area: head;
+    border: 3px solid red;
+    background-color: $color-light;
+    background-image: url("../images/rickMortyBanner2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .div2 {
+    grid-area: quote;
+    border: 3px solid blue;
+  }
+
+  .div3 {
+    grid-area: input;
+    border: 3px solid violet;
+  }
+
+  .div4 {
+    grid-area: cards;
+    border: 3px solid green;
+  }
+}
