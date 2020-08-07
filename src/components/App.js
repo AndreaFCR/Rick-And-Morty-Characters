@@ -7,27 +7,34 @@ import getDataFromApi from "../services/Api";
 import "../stylesheets/App.scss";
 
 const App = () => {
-  // states
+  // set states
   const [characterStore, setCharacterStore] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
 
+  // change character storage when value of nameFilter is changed.
   useEffect(() => {
-    // change character storage when value of nameFilter is changed.
-    getDataFromApi(nameFilter).then((data) => {
+    getDataFromApi().then((data) => {
       setCharacterStore(data);
     });
   }, [nameFilter]);
 
+  // set new value for nameFilter which comes from input value (props.value)
   const handleChangeInput = (props) => {
-    // new value for nameFilter comes from input value (props.value)
     setNameFilter(props.value);
+  };
+
+  // filter data by name character using nameFilter in capital or lower case letters
+  const filteredCharacterStore = () => {
+    return characterStore.filter((character) => {
+      return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+    });
   };
 
   return (
     <div className="App">
       <Header />
       <Filter handleChangeInput={handleChangeInput} nameFilter={nameFilter} />
-      <CharacterList characterStore={characterStore} />
+      <CharacterList characterStore={filteredCharacterStore()} />
     </div>
   );
 };

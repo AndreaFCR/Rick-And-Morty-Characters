@@ -1,17 +1,16 @@
-const getDataFromApi = (nameFilter) => {
-  const ENDPOINT = `https://rickandmortyapi.com/api/character/?name=${nameFilter}`;
+// get data and return in alphabetical order sorted by name
+const getDataFromApi = () => {
+  const ENDPOINT = "https://rickandmortyapi.com/api/character/";
   return fetch(ENDPOINT)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(
-      //   "datos del api que guardaremos, es un array, recorrer!",
-      //   data.results,
-      //   "--> datos de cada personajes disponibles",
-      //   data.results[0]
-      // );
+      // sort data by name
+      const dataSorted = () => {
+        return data.results.sort((a, b) => a.name.localeCompare(b.name));
+      };
 
-      return data.results.map((character) => {
-        // console.log("datos que quiero guardar y cómo los quiero guardar", character.name);
+      // get data attributes I will use
+      return dataSorted().map((character) => {
         return {
           episodes: character.episode.length,
           id: character.id,

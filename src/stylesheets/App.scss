@@ -31,7 +31,11 @@
     .div3-1 {
       border: 1px solid red;
       width: 150px;
-      height: 200px;
+      height: 220px;
+
+      .image {
+        width: 100%;
+      }
     }
   }
 }
