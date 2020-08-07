@@ -6,20 +6,20 @@ const getDataFromApi = (nameFilter) => {
       // console.log(
       //   "datos del api que guardaremos, es un array, recorrer!",
       //   data.results,
-      //   "--> lo que queremos usar",
+      //   "--> datos de cada personajes disponibles",
       //   data.results[0]
       // );
 
       return data.results.map((character) => {
-        // console.log("recojo datos de cada personaje", character.name);
+        // console.log("datos que quiero guardar y cómo los quiero guardar", character.name);
         return {
+          episodes: character.episode.length,
           id: character.id,
-          name: character.name,
           image: character.image,
+          name: character.name,
+          origin: character.origin.name,
           specie: character.species,
           status: character.status,
-          origin: character.origin.name,
-          episdodes: character.episode.length,
         };
       });
     });

@@ -3,14 +3,24 @@ import CharacterCard from "./CharacterCard";
 
 const CharacterList = (props) => {
   const renderCharacterCard = () => {
-    console.log("hola");
+    // console.log(props.characterStore);
+    return props.characterStore.map((character) => {
+      // console.log("soy un personaje", character);
+      return (
+        <CharacterCard
+          key={character.id}
+          id={character.id}
+          image={character.image}
+          episodes={character.episodes}
+          name={character.name}
+          specie={character.specie}
+          status={character.status}
+          origin={character.origin}
+        />
+      );
+    });
   };
-  return (
-    <div className="div3">
-      {renderCharacterCard()}
-      <CharacterCard />
-    </div>
-  );
+  return <div className="div3">{renderCharacterCard()}</div>;
 };
 
 export default CharacterList;

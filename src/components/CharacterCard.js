@@ -1,6 +1,6 @@
 import React from "react";
 
-const CharacterCard = () => {
+const CharacterCard = (props) => {
   return (
     <article className="div3-1">
       Personaje:
