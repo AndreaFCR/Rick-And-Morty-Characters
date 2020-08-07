@@ -9,11 +9,12 @@ const Filter = (props) => {
   };
   return (
     <form className="div2">
-      <label htmlFor="nameSearch">Busca por personaje</label>
+      <label htmlFor="nameSearch"></label>
       <input
-        type="text"
+        type="search"
         name="nameSearch"
-        placeholder="Ej: rick..."
+        placeholder="Busca tu personaje favorito..."
+        className="input"
         onChange={handleChangeInputChild}
         value={props.nameFilter}
       />
