@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import Filter from "./Filter";
+import CharacterList from "./CharacterList";
+import getDataFromApi from "../services/Api";
+
 import "../stylesheets/App.scss";
 
-function App() {
+const App = () => {
+  // states
+  const [characterStore, setCharacterStore] = useState([]);
+  const [nameFilter, setNameFilter] = useState("");
+
+  useEffect(() => {
+    // change character storage when value of nameFilter is changed.
+    getDataFromApi(nameFilter).then((data) => {
+      setCharacterStore(data);
+    });
+  }, [nameFilter]);
+
+  const handleChangeInput = (props) => {
+    // new value for nameFilter comes from input value (props.value)
+    setNameFilter(props.value);
+  };
+
   return (
     <div className="App">
-      <header className="div1"></header>
-      <div className="div2"> caja con la frase y la pregunta</div>
-      <div className="div3">
-        input con placeholder para buscar los personajes
-      </div>
-      <div className="div4">cuadrado donde van las tarjetas</div>
+      <Header />
+      <Filter handleChangeInput={handleChangeInput} nameFilter={nameFilter} />
+      <CharacterList characterStore={characterStore} />
     </div>
   );
-}
+};
 
 export default App;

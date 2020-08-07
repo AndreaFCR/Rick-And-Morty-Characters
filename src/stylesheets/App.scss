@@ -4,34 +4,34 @@
 .App {
   display: grid;
   grid-template-areas:
-    "head quote quote"
-    "head input input"
-    "cards cards cards";
+    "head head"
+    "input input"
+    "cards cards";
 
-  grid-template-columns: 100px 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px 70px 1fr;
 
   .div1 {
     grid-area: head;
-    border: 3px solid red;
-    background-color: $color-light;
-    background-image: url("../images/rickMortyBanner2.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .div2 {
-    grid-area: quote;
+    font-family: $font-titles;
+    font-size: 26px;
     border: 3px solid blue;
   }
 
-  .div3 {
+  .div2 {
     grid-area: input;
+    font-family: $font-normal;
     border: 3px solid violet;
   }
 
-  .div4 {
+  .div3 {
     grid-area: cards;
+    font-family: $font-normal;
     border: 3px solid green;
+    .div3-1 {
+      border: 1px solid red;
+      width: 150px;
+      height: 200px;
+    }
   }
 }
