@@ -26,7 +26,7 @@
   .div2 {
     grid-area: input;
     font-family: $font-normal;
-    padding: 2px 70px;
+    padding: 15px 45px;
     margin-top: 10px;
 
     .input {
@@ -35,6 +35,8 @@
       border-bottom: 2px solid $color-dark-medium;
       background: transparent;
       padding: 7px 0;
+      caret-color: white;
+      color: white;
     }
 
     .input:focus {
@@ -48,6 +50,7 @@
   .div3 {
     grid-area: cards;
     font-family: $font-normal;
+
     .div3-1 {
       background-color: $color-dark-medium;
       width: 150px;
