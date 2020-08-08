@@ -43,7 +43,7 @@ const App = () => {
         <CharacterDetail
           name={character.name}
           status={character.status}
-          specie={character.specie}
+          species={character.species}
           origin={character.origin}
           episodes={character.episodes}
           image={character.image}

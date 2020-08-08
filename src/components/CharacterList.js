@@ -13,7 +13,7 @@ const CharacterList = (props) => {
           image={character.image}
           episodes={character.episodes}
           name={character.name}
-          specie={character.specie}
+          species={character.species}
           status={character.status}
           origin={character.origin}
         />

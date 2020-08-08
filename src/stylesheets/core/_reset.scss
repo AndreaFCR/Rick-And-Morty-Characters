@@ -359,9 +359,14 @@ h2,
 h3 {
   margin: 0;
   display: inline;
+  font-size: inherit;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+* {
+  box-sizing: border-box;
 }
