@@ -22,7 +22,6 @@ html {
 
 body {
   margin: 0;
-  // height: 100%;
 }
 
 /**
@@ -355,6 +354,14 @@ ul {
   list-style-type: none;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   margin: 0;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

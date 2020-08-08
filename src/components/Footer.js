@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Footer className="footer">
+    <footer className="footer">
       <div className="footer__logo">Creado por Andrea Clavijo</div>
-    </Footer>
+    </footer>
   );
 };
 

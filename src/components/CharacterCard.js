@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
   return (
     <Link to={`/character/${props.id}`}>
-      <article className="div3-1">
+      <article className="card">
         <img
-          className="image"
+          className="card__image"
           src={props.image}
           alt={`Foto de ${props.name}`}
         ></img>
-        <div>{props.name}</div>
+        <div>
+          <h3>{props.name}</h3>
+        </div>
         <div>{props.specie}</div>
       </article>
     </Link>

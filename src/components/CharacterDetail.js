@@ -11,7 +11,7 @@ const CharacterDetail = (props) => {
     <section className="modal">
       <article className="modal__content">
         <div className="modal__content__title">
-          <h3>{props.name}</h3>
+          <h2>{props.name}</h2>
           <Link to="/">
             <span>X</span>
           </Link>
@@ -22,10 +22,10 @@ const CharacterDetail = (props) => {
             src={props.image}
             alt={`Foto de ${props.name}`}
           />
-          {/* <div>{props.status}</div>
-          <div>{props.specie}</div>
-          <div>{props.origin}</div>
-          <div>{props.episodes}</div> */}
+          <div>Estado: {props.status}</div>
+          <div>Especie: {props.specie}</div>
+          <div>Origen: {props.origin}</div>
+          <div>Episodios: {props.episodes}</div>
         </div>
       </article>
     </section>
