@@ -20,7 +20,7 @@ const CharacterList = (props) => {
       );
     });
   };
-  return <div className="div3">{renderCharacterCard()}</div>;
+  return <div className="card-list">{renderCharacterCard()}</div>;
 };
 
 export default CharacterList;

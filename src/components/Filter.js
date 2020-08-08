@@ -8,7 +8,7 @@ const Filter = (props) => {
     });
   };
   return (
-    <form className="div2">
+    <form className="filter">
       <label htmlFor="nameSearch"></label>
       <input
         type="search"

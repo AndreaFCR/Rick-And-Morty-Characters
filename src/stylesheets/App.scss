@@ -10,24 +10,21 @@
     "cards cards";
 
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 70px 1fr;
+  grid-template-rows: 150px 90px 1fr;
 
-  .div1 {
+  .header {
     grid-area: head;
-    font-family: $font-titles;
     background-image: url(../images/Rick_and_Morty_-_logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin: 0 20px;
-    font-size: 26px;
   }
 
-  .div2 {
+  .filter {
     grid-area: input;
     font-family: $font-normal;
     padding: 15px 45px;
-    margin-top: 10px;
 
     .input {
       width: 100%;
@@ -47,15 +44,18 @@
     }
   }
 
-  .div3 {
+  .card-list {
     grid-area: cards;
     font-family: $font-normal;
+    display: grid;
+    grid-template-columns: 160px 160px;
+    margin: 10px;
 
     .div3-1 {
       background-color: $color-dark-medium;
-      width: 150px;
-      height: 220px;
-      margin: 15px auto;
+      width: 125px;
+      height: 200px;
+      margin: 10px 0;
       padding: 5px;
       border-radius: 5px;
 
