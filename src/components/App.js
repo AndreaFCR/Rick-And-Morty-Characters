@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import getDataFromApi from "../services/Api";
 import Header from "./Header";
+import Footer from "./Footer";
 import Filter from "./Filter";
 import CharacterList from "./CharacterList";
-import getDataFromApi from "../services/Api";
+import CharacterDetail from "./CharacterDetail";
 
 import "../stylesheets/App.scss";
 
@@ -30,11 +33,47 @@ const App = () => {
     });
   };
 
+  const renderCharacterDetail = (props) => {
+    const routeCharacterId = props.match.params.characterId;
+    const character = characterStore.find(
+      (character) => character.id === routeCharacterId
+    );
+    if (character) {
+      return (
+        <CharacterDetail
+          name={character.name}
+          status={character.status}
+          specie={character.specie}
+          origin={character.origin}
+          episodes={character.episodes}
+          image={character.image}
+          id={character.id}
+        />
+      );
+    } else {
+      return <p>Personaje no encontrado</p>;
+    }
+  };
+
   return (
     <div className="App">
       <Header />
-      <Filter handleChangeInput={handleChangeInput} nameFilter={nameFilter} />
-      <CharacterList characterStore={filteredCharacterStore()} />
+      <main className="main">
+        <Route exact path="/">
+          <Filter
+            handleChangeInput={handleChangeInput}
+            nameFilter={nameFilter}
+          />
+          <CharacterList characterStore={filteredCharacterStore()} />
+        </Route>
+        <Switch>
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
+          />
+        </Switch>
+      </main>
+      <Footer />
     </div>
   );
 };

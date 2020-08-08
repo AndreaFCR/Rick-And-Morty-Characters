@@ -8,11 +8,11 @@ const getDataFromApi = () => {
         data.results
           // sort data by name
           .sort((a, b) => a.name.localeCompare(b.name))
-          // set data attributes I will use
+          // set data attributes I will use and the type of data
           .map((character) => {
             return {
               episodes: character.episode.length,
-              id: character.id,
+              id: character.id.toString(),
               image: character.image,
               name: character.name,
               origin: character.origin.name,

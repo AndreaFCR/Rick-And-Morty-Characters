@@ -1,12 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CharacterCard = (props) => {
   return (
-    <article className="div3-1">
-      <img className="image" src={props.image} alt="Foto del personaje"></img>
-      <div>{props.name}</div>
-      <div>{props.specie}</div>
-    </article>
+    <Link to={`/character/${props.id}`}>
+      <article className="div3-1">
+        <img
+          className="image"
+          src={props.image}
+          alt={`Foto de ${props.name}`}
+        ></img>
+        <div>{props.name}</div>
+        <div>{props.specie}</div>
+      </article>
+    </Link>
   );
 };
 

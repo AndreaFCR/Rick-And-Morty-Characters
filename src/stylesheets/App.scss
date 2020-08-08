@@ -4,71 +4,103 @@
 .App {
   background-color: $color-dark-strong;
   display: grid;
-  grid-template-areas:
-    "head head"
-    "input input"
-    "cards cards";
-
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 150px 90px 1fr;
+  grid-template-rows: 150px 70px 1fr 70px;
   height: 100%;
 
   .header {
-    grid-area: head;
-    background-image: url(../images/Rick_and_Morty_-_logo.png);
+    grid-column: 1/3;
+    grid-row: 1/2;
+    border: 1px solid red;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0 20px;
-  }
 
-  .filter {
-    grid-area: input;
-    font-family: $font-normal;
-    padding: 15px 45px;
-
-    .input {
-      width: 100%;
-      border: 0;
-      border-bottom: 2px solid $color-dark-medium;
-      background: transparent;
-      padding: 7px 0;
-      caret-color: white;
-      color: white;
-    }
-
-    .input:focus {
-      border: 0;
-      outline: none;
-      border-top: 2px solid $color-dark-medium;
-      border-bottom: 2px solid $color-dark-medium;
+    &__logo {
+      height: 150px;
+      background-image: url(../images/Rick_and_Morty_-_logo.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 20px;
     }
   }
 
-  .card-list {
-    grid-area: cards;
-    font-family: $font-normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  .main {
+    grid-column: 1/3;
+    grid-row: 2/4;
 
-    .div3-1 {
-      background-color: $color-dark-medium;
-      width: 130px;
-      height: 200px;
-      margin: 10px 10px;
-      padding: 5px;
-      border-radius: 5px;
+    .filter {
+      border: 1px solid red;
+      font-family: $font-normal;
+      margin: 15px 30px;
 
-      .image {
+      &__input {
         width: 100%;
+        border: 0;
+        border-bottom: 2px solid $color-dark-medium;
+        background: transparent;
+        padding: 7px;
+        caret-color: white;
+        color: white;
+      }
+
+      &__input:focus {
+        border: 0;
+        outline: none;
+        border-top: 2px solid $color-dark-medium;
+        border-bottom: 2px solid $color-dark-medium;
       }
     }
 
-    .div3-1:hover {
-      transform: scale(1.06);
-      cursor: pointer;
+    .card-list {
+      font-family: $font-normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .div3-1 {
+        background-color: $color-dark-medium;
+        width: 130px;
+        height: 200px;
+        margin: 10px 10px;
+        padding: 5px;
+        border-radius: 5px;
+
+        .image {
+          width: 100%;
+        }
+      }
+
+      .div3-1:hover {
+        transform: scale(1.06);
+        cursor: pointer;
+      }
+    }
+
+    .modal {
+      // border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // height: 100%;
+
+      &__content {
+        border: 1px solid white;
+        // transform: translate(0, -50px);
+        background-color: $color-dark-medium;
+        padding: 5px;
+        border-radius: 5px;
+        width: 200px;
+        height: 300px;
+
+        &__main {
+          &__image {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
