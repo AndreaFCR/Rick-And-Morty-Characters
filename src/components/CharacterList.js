@@ -1,5 +1,7 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
+import PropTypes from "prop-types";
+import "../stylesheets/CharacterList.scss";
 
 const CharacterList = (props) => {
   const renderCharacterCard = () => {
@@ -28,6 +30,11 @@ const CharacterList = (props) => {
     }
   };
   return <section className="card-list">{renderCharacterCard()}</section>;
+};
+
+CharacterList.propTypes = {
+  nameFilter: PropTypes.string,
+  characterStore: PropTypes.array,
 };
 
 export default CharacterList;

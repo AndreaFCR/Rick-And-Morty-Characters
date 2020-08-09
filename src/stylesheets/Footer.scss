@@ -1,0 +1,14 @@
+@import "./core/variables";
+
+.footer {
+  grid-column: 1/5;
+  grid-row: 4/5;
+  text-align: center;
+  color: $color-light;
+  font-family: $font-titles;
+  font-size: 20px;
+  padding: 10px 0;
+  div {
+    margin: 5px 0;
+  }
+}

@@ -51,7 +51,11 @@ const App = () => {
         />
       );
     } else {
-      return <p>Personaje no encontrado</p>;
+      return (
+        <div className="error-message">
+          <p>Personaje no encontrado</p>
+        </div>
+      );
     }
   };
 

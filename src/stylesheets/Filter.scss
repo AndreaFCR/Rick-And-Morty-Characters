@@ -1,0 +1,31 @@
+@import "./core/variables";
+
+.filter {
+  font-family: $font-normal;
+  margin: 15px 30px;
+
+  &__input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $color-dark-medium;
+    background: transparent;
+    padding: 7px;
+    caret-color: $color-light;
+    color: $color-light;
+  }
+
+  &__input:focus {
+    border: 0;
+    outline: none;
+    border-top: 2px solid $color-dark-medium;
+    border-bottom: 2px solid $color-dark-medium;
+  }
+
+  @media all and (min-width: 768px) {
+    text-align: center;
+
+    &__input {
+      width: 50%;
+    }
+  }
+}

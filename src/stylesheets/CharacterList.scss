@@ -1,0 +1,28 @@
+@import "./core/variables";
+
+.card-list {
+  font-family: $font-normal;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+
+  a {
+    margin: auto;
+  }
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0;
+  }
+
+  @media all and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.error-message {
+  font-family: $font-normal;
+  margin: 30px;
+  color: $color-light;
+  text-align: center;
+}

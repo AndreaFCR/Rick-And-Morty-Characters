@@ -1,0 +1,126 @@
+@import "./core/variables";
+
+.modal {
+  color: $color-light;
+  font-family: $font-normal;
+  display: grid;
+  padding: 30px 0;
+
+  &__content {
+    border: 1px solid $color-light;
+    background-color: $color-dark-medium;
+    padding: 5px;
+    border-radius: 5px;
+    width: 300px;
+    margin: auto;
+    cursor: default;
+
+    &__title {
+      font-size: 35px;
+      font-family: $font-titles;
+      text-transform: capitalize;
+      text-shadow: 2px 2px 4px #000000;
+      text-align: center;
+      margin: 7px 0;
+    }
+
+    &__icon {
+      font-size: 20px;
+      position: relative;
+      top: -55px;
+      left: 270px;
+      z-index: 1;
+    }
+
+    .fa:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    &__main {
+      padding: 5px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &__image {
+        width: 160px;
+        border-radius: 20px;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          border-radius: 20px;
+        }
+      }
+
+      &__properties {
+        font-size: 16px;
+        line-height: 1.5rem;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    padding: 100px 0;
+
+    &__content {
+      width: 500px;
+      padding: 7px;
+      border-radius: 7px;
+
+      &__title {
+        font-size: 50px;
+      }
+
+      &__icon {
+        font-size: 33px;
+        top: -74px;
+        left: 454px;
+      }
+
+      &__main__image {
+        width: 200px;
+      }
+
+      &__main__properties {
+        font-size: 20px;
+        line-height: 2.5rem;
+      }
+    }
+  }
+
+  @media all and (min-width: 1024px) {
+    padding: 150px 0;
+
+    &__content {
+      width: 800px;
+      padding: 9px;
+      border-radius: 9px;
+
+      &__title {
+        font-size: 80px;
+        text-shadow: 3px 3px 5px #000000;
+      }
+
+      &__icon {
+        font-size: 50px;
+        top: -100px;
+        left: 725px;
+      }
+
+      &__main__image {
+        width: 280px;
+      }
+
+      &__main__properties {
+        font-size: 30px;
+        line-height: 3rem;
+      }
+    }
+  }
+}

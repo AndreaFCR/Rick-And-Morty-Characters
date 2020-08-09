@@ -1,0 +1,12 @@
+@import "./core/variables";
+
+.header {
+  &__logo {
+    height: 180px;
+    background-image: url(../images/Rick_and_Morty_-_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 20px;
+  }
+}

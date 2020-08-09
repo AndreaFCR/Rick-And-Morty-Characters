@@ -1,0 +1,38 @@
+@import "./core/variables";
+
+.card {
+  background-color: $color-dark-medium;
+  width: 200px;
+  height: 300px;
+  margin: 10px 10px;
+  padding: 7px;
+  border-radius: 5px;
+  border-style: inset;
+  border-color: $color-medium;
+  color: $color-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__image {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: 30px;
+    font-family: $font-titles;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  &__species {
+    font-size: 14px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}

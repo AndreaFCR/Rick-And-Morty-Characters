@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "../stylesheets/Filter.scss";
 
 const Filter = (props) => {
   const handleChangeInputChild = (ev) => {
@@ -11,10 +13,8 @@ const Filter = (props) => {
   return (
     <section className="filter">
       <form>
-        <label htmlFor="nameSearch"></label>
         <input
-          type="search"
-          name="nameSearch"
+          type="text"
           placeholder="Busca tu personaje favorito..."
           className="filter__input"
           onChange={handleChangeInputChild}
@@ -23,6 +23,10 @@ const Filter = (props) => {
       </form>
     </section>
   );
+};
+
+Filter.propTypes = {
+  nameFilter: PropTypes.string,
 };
 
 export default Filter;
