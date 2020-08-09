@@ -3,22 +3,29 @@ import CharacterCard from "./CharacterCard";
 
 const CharacterList = (props) => {
   const renderCharacterCard = () => {
-    // console.log(props.characterStore);
-    return props.characterStore.map((character) => {
-      // console.log("soy un personaje", character);
+    // error message if characterStore is empty
+    if (props.characterStore.length === 0) {
       return (
-        <CharacterCard
-          key={character.id}
-          id={character.id}
-          image={character.image}
-          episodes={character.episodes}
-          name={character.name}
-          species={character.species}
-          status={character.status}
-          origin={character.origin}
-        />
+        <div className="error-message">
+          <p>{`No hay ningún personaje que coincida con la palabra "${props.nameFilter}"`}</p>
+        </div>
       );
-    });
+    } else {
+      return props.characterStore.map((character) => {
+        return (
+          <CharacterCard
+            key={character.id}
+            id={character.id}
+            image={character.image}
+            episodes={character.episodes}
+            name={character.name}
+            species={character.species}
+            status={character.status}
+            origin={character.origin}
+          />
+        );
+      });
+    }
   };
   return <section className="card-list">{renderCharacterCard()}</section>;
 };

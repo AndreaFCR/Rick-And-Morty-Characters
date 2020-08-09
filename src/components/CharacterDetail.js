@@ -11,10 +11,13 @@ const CharacterDetail = (props) => {
         <article className="modal__content" onClick={handleModalContentClick}>
           <div className="modal__content__title">
             <h2>{props.name}</h2>
-            <Link to="/">
-              <span>X</span>
-            </Link>
           </div>
+          <Link to="/">
+            <span className="modal__content__icon">
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </span>
+          </Link>
+
           <div className="modal__content__main">
             <div className="modal__content__main__image">
               <img src={props.image} alt={`Foto de ${props.name}`} />

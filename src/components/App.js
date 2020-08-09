@@ -64,7 +64,10 @@ const App = () => {
             handleChangeInput={handleChangeInput}
             nameFilter={nameFilter}
           />
-          <CharacterList characterStore={filteredCharacterStore()} />
+          <CharacterList
+            characterStore={filteredCharacterStore()}
+            nameFilter={nameFilter}
+          />
         </Route>
         <Switch>
           <Route
