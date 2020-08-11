@@ -2,14 +2,22 @@ import React from "react";
 
 const FilterByOrigin = (props) => {
   const handleChangeChild = (ev) => {
-    console.log(ev.currentTarget.value);
+    props.handleChangeInput({
+      key: ev.target.name,
+      value: ev.target.value,
+    });
   };
 
   const originElements = props.getOriginPlace.map((place, index) => {
     return (
       <label key={index}>
         Origen:
-        <input type="checkbox" value={place} onChange={handleChangeChild} />
+        <input
+          type="checkbox"
+          value={place}
+          onChange={handleChangeChild}
+          name="location"
+        />
         {place}
       </label>
     );

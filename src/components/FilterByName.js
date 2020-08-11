@@ -5,6 +5,7 @@ const FilterByName = (props) => {
     ev.preventDefault();
     props.handleChangeInput({
       // input value go up through lifting to handler mother as props.value
+      key: ev.target.name,
       value: ev.target.value,
     });
   };
@@ -15,6 +16,7 @@ const FilterByName = (props) => {
       className="filter__input"
       onChange={handleChangeInputChild}
       value={props.nameFilter}
+      name="name"
     />
   );
 };

@@ -13,6 +13,7 @@ const App = () => {
   // set states
   const [characterStore, setCharacterStore] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
+  const [originPlace, setOriginPlace] = useState("");
 
   // change character storage when value of nameFilter is changed.
   useEffect(() => {
@@ -22,8 +23,13 @@ const App = () => {
   }, [nameFilter]);
 
   // set new value for nameFilter which comes from input value (props.value)
-  const handleChangeInput = (props) => {
-    setNameFilter(props.value);
+  const handleChangeInput = (data) => {
+    console.log(data);
+    if (data.key === "name") {
+      setNameFilter(data.value);
+    } else if (data.key === "location") {
+      setOriginPlace(data.value);
+    }
   };
 
   // filter data by name character using nameFilter in capital or lower case letters
@@ -44,6 +50,8 @@ const App = () => {
     });
     return planets;
   };
+
+  console.log(originPlace);
 
   const renderCharacterDetail = (props) => {
     const routeCharacterId = props.match.params.characterId;
