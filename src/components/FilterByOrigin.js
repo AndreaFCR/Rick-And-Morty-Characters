@@ -5,7 +5,7 @@ const FilterByOrigin = (props) => {
     props.handleChangeInput({
       key: ev.target.name,
       value: ev.target.value,
-      isChecked: ev.target.checked === true ? ev.target.checked : "",
+      isChecked: ev.target.checked,
     });
   };
 

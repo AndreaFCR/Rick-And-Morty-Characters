@@ -26,10 +26,17 @@ const App = () => {
   const handleChangeInput = (data) => {
     if (data.key === "name") {
       setNameFilter(data.value);
-    } else if (data.key === "location" && data.isChecked === true) {
-      const newOriginPlace = [...originPlace];
-      newOriginPlace.push(data.value);
-      setOriginPlace(newOriginPlace);
+    } else if (data.key === "location") {
+      if (data.isChecked === true) {
+        const newOriginPlace = [...originPlace];
+        newOriginPlace.push(data.value);
+        setOriginPlace(newOriginPlace);
+      } else {
+        const newOriginPlace = originPlace.filter(
+          (place) => place !== data.value
+        );
+        setOriginPlace(newOriginPlace);
+      }
     }
   };
 
