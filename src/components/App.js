@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
 import Header from "./Header";
 import Footer from "./Footer";
-import Filter from "./Filter";
+import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 
@@ -31,6 +31,18 @@ const App = () => {
     return characterStore.filter((character) => {
       return character.name.toUpperCase().includes(nameFilter.toUpperCase());
     });
+  };
+
+  const getOriginPlace = (props) => {
+    let planets = [];
+    characterStore.forEach((character) => {
+      let isInclude = planets.includes(character.origin);
+      if (isInclude === false) {
+        planets.push(character.origin);
+      }
+      return planets;
+    });
+    return planets;
   };
 
   const renderCharacterDetail = (props) => {
@@ -64,9 +76,10 @@ const App = () => {
       <Header />
       <main className="main">
         <Route exact path="/">
-          <Filter
+          <Filters
             handleChangeInput={handleChangeInput}
             nameFilter={nameFilter}
+            getOriginPlace={getOriginPlace()}
           />
           <CharacterList
             characterStore={filteredCharacterStore()}
