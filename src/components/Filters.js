@@ -12,10 +12,13 @@ const Filters = (props) => {
           handleChangeInput={props.handleChangeInput}
           nameFilter={props.nameFilter}
         />
-        <FilterByOrigin
-          getOriginPlace={props.getOriginPlace}
-          handleChangeInput={props.handleChangeInput}
-        />
+        <label>
+          Origen:
+          <FilterByOrigin
+            getOriginPlace={props.getOriginPlace}
+            handleChangeInput={props.handleChangeInput}
+          />
+        </label>
       </form>
     </section>
   );

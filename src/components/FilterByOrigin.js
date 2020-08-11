@@ -5,13 +5,13 @@ const FilterByOrigin = (props) => {
     props.handleChangeInput({
       key: ev.target.name,
       value: ev.target.value,
+      isChecked: ev.target.checked === true ? ev.target.checked : "",
     });
   };
 
   const originElements = props.getOriginPlace.map((place, index) => {
     return (
       <label key={index}>
-        Origen:
         <input
           type="checkbox"
           value={place}
